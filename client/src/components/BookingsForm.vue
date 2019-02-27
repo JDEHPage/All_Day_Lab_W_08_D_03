@@ -9,9 +9,8 @@
     <label for="email">E-mail:</label>
     <input type="text" id="email" v-model="email" required>
 
-    <b-form-checkbox id="checkbox1" v-model="checked_in" value="true" unchecked-value="false">
-      I accept the terms and use
-    </b-form-checkbox>
+    <label for="email">Status:</label>
+    <input type="checkbox" id="email" v-model="checked_in" >
 
 
     <input type="submit" name="save" value="Save">
@@ -26,7 +25,7 @@ export default {
       name: "",
     surname: "",
     email: "",
-    checked_in: "false"
+    checked_in: false
     }
   },
   methods: {
@@ -34,14 +33,14 @@ export default {
       form.preventDefault()
     if(this.name === '') return;
     const booking = {
-      name: "",
-    surname: "",
-    email: "",
-    checked_in: "false"
+      name: this.name,
+    surname: this.surname,
+    email: this.email,
+    checked_in: this.checked_in
     }
     fetch('http://localhost:3000/api/bookings', {
       method: 'POST',
-      body: JSON.stringify(game),
+      body: JSON.stringify(booking),
       headers: { 'Content-Type': 'application/json'}
     })
     .then(res => res.json())
