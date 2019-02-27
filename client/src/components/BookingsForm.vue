@@ -44,7 +44,7 @@ export default {
       headers: { 'Content-Type': 'application/json'}
     })
     .then(res => res.json())
-    .then(newBooking => eventBus.$emit('booking-added', newBooking))
+    .then(res => eventBus.$emit('booking-added', res))
     }
   }
 }
