@@ -1,10 +1,22 @@
 <template lang="html">
+
   <div class="bookings-wrapper">
+    <div class="">
+      <h1>Bookedin</h1>
     <booking
         v-for="(booking, index) in bookings"
         :key="index"
-        :booking="booking"></booking>
+        :booking="booking" v-if="booking.checked_in"></booking>
+    </div>
+    <div class="">
+      <h1>Not-Bookedin</h1>
+    <booking
+        v-for="(booking, index) in bookings"
+        :key="index"
+        :booking="booking" v-if="!booking.checked_in"></booking>
   </div>
+  </div>
+
 </template>
 
 <script>
@@ -29,6 +41,11 @@ export default {
       let index = this.bookings.findIndex(booking => booking._id == id)
       this.bookings.splice(index, 1)
     })
+
+    // eventBus.$on('booking-updated', (id) => {
+    //   let index = this.bookings.findIndex(booking => booking._id == id)
+    //   this.bookings.splice(index, 1)
+    // })
   },
   components: {
     Booking
