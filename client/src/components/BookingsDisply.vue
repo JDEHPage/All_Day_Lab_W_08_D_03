@@ -2,14 +2,14 @@
 
   <div class="bookings-wrapper">
     <div class="">
-      <h1>Bookedin</h1>
+      <h1>Booked in</h1>
     <booking
         v-for="(booking, index) in bookings"
         :key="index"
         :booking="booking" v-if="booking.checked_in"></booking>
     </div>
     <div class="">
-      <h1>Not-Bookedin</h1>
+      <h1>Not-Booked in</h1>
     <booking
         v-for="(booking, index) in bookings"
         :key="index"
@@ -42,10 +42,10 @@ export default {
       this.bookings.splice(index, 1)
     })
 
-    // eventBus.$on('booking-updated', (id) => {
-    //   let index = this.bookings.findIndex(booking => booking._id == id)
-    //   this.bookings.splice(index, 1)
-    // })
+    eventBus.$on('booking-updated', (id) => {
+      // let index = this.bookings.findIndex(booking => booking._id == id)
+      // this.booking.checked_in
+    })
   },
   components: {
     Booking
@@ -55,4 +55,9 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+.bookings-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
 </style>

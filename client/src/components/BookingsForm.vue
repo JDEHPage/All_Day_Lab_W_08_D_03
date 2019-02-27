@@ -7,7 +7,7 @@
     <input type="text" id="surname" v-model="surname" required>
 
     <label for="email">E-mail:</label>
-    <input type="text" id="email" v-model="email" required>
+    <input type="email" id="email" v-model="email" required>
 
     <label for="checked_in">Status:</label>
     <input type="checkbox" id="checked_in" v-model="checked_in" >
@@ -51,4 +51,13 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+form {
+  margin-top: 20px;
+}
+
+input {
+  margin: 0.2em 1.5em 0.2em 0.4em;
+}
+
 </style>
