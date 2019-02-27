@@ -2,7 +2,6 @@
   <div class="bookings-card">
     <h4>Guest: {{ booking.name }} {{ booking.surname }}</h4>
     <p>E-mail: {{ booking.email }}</p>
-    <!-- <p>Status: {{ booking.checked_in }}</p> -->
     <label for="checked_in">Status:</label>
     <input type="checkbox" id="checked_in" v-model="booking.checked_in" v-on:change="changeStatus">
 
@@ -35,19 +34,25 @@ export default {
 
 <style lang="css" scoped>
  .bookings-card {
-   
+   background-color: #FFFFFF;
+   /* box-sizing: border-box; */
+   max-width: 180px;
+   max-height: 180px;
    border: 1px solid black;
    border-radius: 5px;
    padding: 20px;
    margin: 10px;
  }
 
+ .bookings-card h4{
+   margin-top: 0px;
+ }
+
  .delete-btn {
-   width: 30px;
-   height: 30px;
+
    background-size: 30px;
-   border: none;
-   padding: 0;
+   border: ;
+
    border-radius:
  }
 </style>

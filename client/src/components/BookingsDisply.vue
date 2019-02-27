@@ -1,14 +1,14 @@
 <template lang="html">
 
   <div class="bookings-wrapper">
-    <div class="">
+    <div class="checkedin-wrapper">
       <h1>Booked in</h1>
     <booking
         v-for="(booking, index) in bookings"
         :key="index"
         :booking="booking" v-if="booking.checked_in"></booking>
     </div>
-    <div class="">
+    <div class="checkedout-wrapper">
       <h1>Not-Booked in</h1>
     <booking
         v-for="(booking, index) in bookings"
@@ -57,7 +57,29 @@ export default {
 <style lang="css" scoped>
 
 .bookings-wrapper {
+  margin-top: 20px;
+  padding-bottom: 20px;
+  background-color: #5366B5;
+  border-radius: 10px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
 }
+
+.bookings-wrapper h1{
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.checkedin-wrapper {
+  margin-right: 3vw;
+
+}
+
+.checkedout-wrapper {
+  margin-left: 3vw;
+}
+
+
 </style>
