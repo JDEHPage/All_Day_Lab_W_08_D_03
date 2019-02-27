@@ -9,8 +9,8 @@
     <label for="email">E-mail:</label>
     <input type="text" id="email" v-model="email" required>
 
-    <label for="email">Status:</label>
-    <input type="checkbox" id="email" v-model="checked_in" >
+    <label for="checked_in">Status:</label>
+    <input type="checkbox" id="checked_in" v-model="checked_in" >
 
 
     <input type="submit" name="save" value="Save">
