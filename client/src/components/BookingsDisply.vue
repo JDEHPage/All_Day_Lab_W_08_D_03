@@ -34,7 +34,7 @@ export default {
     .then(bookings => this.bookings = bookings);
 
     eventBus.$on('booking-added', (booking) => {
-      this.bookings.push(game)
+      this.bookings.push(booking)
     })
 
     eventBus.$on('booking-deleted', (id) => {
@@ -42,10 +42,10 @@ export default {
       this.bookings.splice(index, 1)
     })
 
-    eventBus.$on('booking-updated', (id) => {
-      // let index = this.bookings.findIndex(booking => booking._id == id)
-      // this.booking.checked_in
-    })
+    // eventBus.$on('booking-updated', (id) => {
+    //   // let index = this.bookings.findIndex(booking => booking._id == id)
+    //   // this.booking.checked_in
+    // })
   },
   components: {
     Booking
